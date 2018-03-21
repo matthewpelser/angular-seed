@@ -16,10 +16,7 @@ module.exports = {
 			{
 				test: /\.ts$/,
 				loaders: [
-					{
-						loader: 'awesome-typescript-loader',
-						options: { configFileName: helpers.root('.', 'tsconfig.json') }
-					},
+					'awesome-typescript-loader',
 					'angular2-template-loader',
 					'tslint-loader',
 				]
