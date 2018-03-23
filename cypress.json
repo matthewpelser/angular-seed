@@ -1,1 +1,3 @@
-{}
+{
+    "supportFile": "test/e2e/support/index.ts"
+}

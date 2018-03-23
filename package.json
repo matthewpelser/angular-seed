@@ -15,6 +15,7 @@
     "zone.js": "^0.8.20"
   },
   "devDependencies": {
+    "@cypress/webpack-preprocessor": "^2.0.0",
     "@types/chai": "^4.1.2",
     "@types/mocha": "^2.2.48",
     "@types/node": "^9.4.7",
@@ -52,8 +53,9 @@
     "build": "rimraf ./dist && webpack --config ./build/webpack.prod.config.js",
     "compile": "tsc -p tsconfig.json --outDir ./dist/build",
     "dev": "webpack-dev-server --config ./build/webpack.dev.config.js",
-    "test": "karma start test/karma.conf.js --log-level=DEBUG",
-    "test-debug": "karma start test/karma.conf.js --single-run=false --debug",
+    "test": "karma start test/unit/karma.conf.js --log-level=DEBUG",
+    "e2e": "rimraf ./dist && webpack --config ./build/webpack.e2e.config.js",
+    "test-debug": "karma start test/unit/karma.conf.js --single-run=false --debug",
     "cypress:open": "cypress open"
   },
   "repository": {
