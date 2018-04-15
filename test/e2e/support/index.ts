@@ -1,7 +1,3 @@
-import "cypress/types/bluebird.d";
-import "cypress/types/blob-util.d";
-import "cypress/types/minimatch.d";
-import "cypress/types";
 // ***********************************************************
 // This example support/index.js is processed and
 // loaded automatically before your test files.

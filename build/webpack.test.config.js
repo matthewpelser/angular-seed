@@ -37,20 +37,6 @@ module.exports = {
 	resolve: {
 		extensions: [ '.ts', '.js' ]
 	},
-	/*
-	optimization: {
-		splitChunks: {
-			cacheGroups: {
-				vendor: {
-					test: /node_modules/,
-					chunks: 'initial',
-					name: 'vendor',
-					enforce: true
-				},
-			}
-		} 
-	},
-	*/
 	plugins: [
 		// Workaround for angular/angular#11580, Fix for warnings;
 		new webpack.ContextReplacementPlugin(

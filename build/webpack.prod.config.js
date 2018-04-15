@@ -47,7 +47,7 @@ module.exports = {
 	},
 	output: {
 		filename: '[name].js',
-		path: helpers.root('./dist')
+		path: helpers.root('./bundle/dist')
 	},
 	optimization: {
 		splitChunks: {

@@ -3,8 +3,9 @@ const helpers = require('./helpers');
 
 module.exports = {
 	entry: {
-		'app': ['./test/e2e/main.ts']
+		'integration': ['./test/e2e/main.ts']
 	},
+	watch: true,
 	mode: 'development',
 	devtool: 'inline-source-map',
 	module: {
@@ -38,7 +39,7 @@ module.exports = {
 	},
 	output: {
 		filename: '[name].js',
-		path: helpers.root('./dist/integration')
+		path: helpers.root('./bundle/e2e/integration')
 	},
 	resolve: {
 		extensions: [ '.ts', '.js' ]

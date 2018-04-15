@@ -22,6 +22,7 @@
     "angular2-template-loader": "^0.6.2",
     "awesome-typescript-loader": "^5.0.0-1",
     "chai": "^4.1.2",
+    "concurrently": "^3.5.1",
     "css-loader": "^0.28.11",
     "cypress": "^2.1.0",
     "eslint": "^4.19.0",
@@ -50,13 +51,14 @@
     "webpack-merge": "^4.1.2"
   },
   "scripts": {
-    "build": "rimraf ./dist && webpack --config ./build/webpack.prod.config.js",
-    "compile": "tsc -p tsconfig.json --outDir ./dist/build",
-    "dev": "webpack-dev-server --config ./build/webpack.dev.config.js",
-    "test": "karma start test/unit/karma.conf.js --log-level=DEBUG",
-    "e2e": "rimraf ./dist && webpack --config ./build/webpack.e2e.config.js",
-    "test-debug": "karma start test/unit/karma.conf.js --single-run=false --debug",
-    "cypress:open": "cypress open"
+    "clean": "rimraf ./bundle",
+    "build:prod": "npm run clean && webpack --config ./build/webpack.prod.config.js",
+    "build:e2e": "npm run clean && webpack --config ./build/webpack.e2e.config.js",
+    "tool:compile": "tsc -p tsconfig.json --outDir ./bundle/compile",
+    "server:dev": "webpack-dev-server --config ./build/webpack.dev.config.js",
+    "test:unit": "karma start test/unit/karma.conf.js --log-level=DEBUG",
+    "test:unit-debug": "karma start test/unit/karma.conf.js --single-run=false --debug",
+    "test:e2e": "concurrently \"npm run build:e2e\" \"npm run server:dev\" \"cypress open\""
   },
   "repository": {
     "type": "git",
